@@ -9,16 +9,19 @@ import java.security.MessageDigest
  * @param data - the Data that this Block contains
  * @param previousHash - the Hash of the previous Block in the Blockchain
  */
-class Block(index: Long, timestamp: Long, data: Data, previousHash: String) {
+class Block(val index: Long, val timestamp: Long, val data: Data, val previousHash: String) {
 
-  def hash: String = hash(index, timestamp, data, previousHash)
+  def hash: String = Block.hash(index, timestamp, data, previousHash)
 
-  private def hash(index: Long, timestamp: Long, data: Data, previousHash: String): String = {
+}
+
+object Block {
+  def hash(index: Long, timestamp: Long, data: Data, previousHash: String): String = {
     val input = index.toString + timestamp.toString + data.toString + previousHash.toString
     sha256(input)
   }
 
-  private def sha256(text: String) : String = {
+  def sha256(text: String) : String = {
     val message: Array[Byte] = MessageDigest.getInstance("SHA-256").digest(text.getBytes("UTF-8"))
     String.format("%064x", new BigInteger(1, message))
   }

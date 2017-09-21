@@ -1,5 +1,5 @@
 package models
 
-class Data {
+class Data(message: String) {
 
 }
