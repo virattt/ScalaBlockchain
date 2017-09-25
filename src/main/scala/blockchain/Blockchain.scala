@@ -5,6 +5,9 @@ import models.Block
 
 class Blockchain(var blockchain: List[Block]) {
 
+  /**
+    * Add blocks to the head of the Blockchain list
+    */
   def addBlock(block: Block): List[Block] = {
     if (isValidBlock(block, blockchain.head)) {
       blockchain = block :: blockchain
@@ -17,6 +20,28 @@ class Blockchain(var blockchain: List[Block]) {
     if (previousBlock.hash != block.previousHash) false
     if (Block.hash(block.index, block.timestamp, block.data, block.previousHash) != block.hash) false
     true
+  }
+
+  def isValidChain(blockchainToValidate: List[Block]): Boolean = {
+    if (blockchainToValidate.last != Blockchain.getGenesisBlock) false
+
+    loop(blockchainToValidate)
+
+    def loop(blockchain: List[Block]): Boolean = blockchain match {
+      case Nil => false
+      case x :: Nil => true
+      case x :: xs => {
+        if (x.previousHash != xs.head.hash) false
+        loop(xs)
+      }
+    }
+  }
+
+  def replaceChain(newBlocks: List[Block]): List[Block] = {
+    if (isValidChain(newBlocks) && newBlocks.length > blockchain.length) {
+      blockchain = newBlocks
+    }
+    blockchain
   }
 }
 
