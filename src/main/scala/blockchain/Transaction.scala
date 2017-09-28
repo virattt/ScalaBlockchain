@@ -1,0 +1,5 @@
+package blockchain
+
+class Transaction {
+
+}

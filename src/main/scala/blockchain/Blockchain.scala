@@ -1,5 +1,5 @@
 package blockchain
-import models.Block
+import block.Block
 
 
 class Blockchain(var blockchain: List[Block]) {
@@ -18,7 +18,7 @@ class Blockchain(var blockchain: List[Block]) {
 }
 
 object Blockchain {
-  import models.Data
+  import block.Data
 
   def getGenesisBlock: Block = {
     new Block(

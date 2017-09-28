@@ -1,4 +1,4 @@
-package models
+package block
 
 class Data(message: String) {
 

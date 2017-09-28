@@ -1,4 +1,4 @@
-package models
+package block
 
 import java.math.BigInteger
 import java.security.MessageDigest

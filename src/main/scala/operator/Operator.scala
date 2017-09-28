@@ -1,0 +1,5 @@
+package operator
+
+class Operator {
+
+}
