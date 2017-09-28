@@ -5,15 +5,17 @@ import block.Block
 class Blockchain(var blockchain: List[Block]) {
 
   def addBlock(block: Block): List[Block] = {
-    if (isValidBlock(block, blockchain.head())) blockchain = block :: blockchain
+    if (isValidBlock(block, blockchain.head)) {
+      blockchain = block :: blockchain
+    }
     blockchain
   }
 
   def isValidBlock(block: Block, previousBlock: Block): Boolean = {
     if (previousBlock.index + 1 != block.index) false
-    else if (previousBlock.hash != block.previousHash) false
-    else if (Block.hash(block.index, block.timestamp, block.data, block.previousHash) != block.hash) false
-    else true
+    if (previousBlock.hash != block.previousHash) false
+    if (Block.hash(block.index, block.timestamp, block.data, block.previousHash) != block.hash) false
+    true
   }
 }
 
