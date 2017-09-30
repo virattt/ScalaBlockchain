@@ -1,22 +1,38 @@
 package miner
 
 import blockchain.Blockchain
-import block.Block
+import block.{Transaction, Block}
 
 class Miner(blockchain: Blockchain) {
 
-  def mine(rewardAddress: String): Unit ={
-
+  /**
+   *
+   * @param rewardAddress
+   * @return
+   */
+  def mine(rewardAddress: String): Block ={
+    null
   }
 
-  def generateNextBlock(address: String, previousBlock: Block, transactions: List): Unit = {
-
+  /**
+   *
+   * @param address
+   * @param previousBlock
+   * @param transactions
+   * @return
+   */
+  def generateNextBlock(address: String, previousBlock: Block, transactions: List[Transaction]): Block = {
+    null
   }
 
+  /**
+   *
+   * @param block
+   * @param difficulty
+   * @return
+   */
   def proveWorkFor(block: Block, difficulty: String): Unit = {
 
   }
-
-
 
 }

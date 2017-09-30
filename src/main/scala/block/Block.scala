@@ -11,17 +11,35 @@ import java.security.MessageDigest
  */
 class Block(val index: Long, val timestamp: Long, val data: Data, val previousHash: String) {
 
+  /**
+   *
+   * @return
+   */
   def hash: String = Block.hash(index, timestamp, data, previousHash)
 
 }
 
 object Block {
+
+  /**
+   *
+   * @param index
+   * @param timestamp
+   * @param data
+   * @param previousHash
+   * @return
+   */
   def hash(index: Long, timestamp: Long, data: Data, previousHash: String): String = {
     val input = index.toString + timestamp.toString + data.toString + previousHash.toString
     sha256(input)
   }
 
-  def sha256(text: String) : String = {
+  /**
+   *
+   * @param text
+   * @return
+   */
+  def sha256(text: String): String = {
     val message: Array[Byte] = MessageDigest.getInstance("SHA-256").digest(text.getBytes("UTF-8"))
     String.format("%064x", new BigInteger(1, message))
   }

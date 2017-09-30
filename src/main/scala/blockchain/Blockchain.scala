@@ -4,6 +4,11 @@ import block.Block
 
 class Blockchain(var blockchain: List[Block]) {
 
+  /**
+   *
+   * @param block
+   * @return
+   */
   def addBlock(block: Block): List[Block] = {
     if (isValidBlock(block, blockchain.head)) {
       blockchain = block :: blockchain
@@ -11,6 +16,12 @@ class Blockchain(var blockchain: List[Block]) {
     blockchain
   }
 
+  /**
+   *
+   * @param block
+   * @param previousBlock
+   * @return
+   */
   def isValidBlock(block: Block, previousBlock: Block): Boolean = {
     if (previousBlock.index + 1 != block.index) false
     if (previousBlock.hash != block.previousHash) false
@@ -19,9 +30,16 @@ class Blockchain(var blockchain: List[Block]) {
   }
 }
 
+/**
+ *
+ */
 object Blockchain {
   import block.Data
 
+  /**
+   *
+   * @return
+   */
   def getGenesisBlock: Block = {
     new Block(
       0,

@@ -1,0 +1,5 @@
+package block
+
+class Transaction {
+
+}
