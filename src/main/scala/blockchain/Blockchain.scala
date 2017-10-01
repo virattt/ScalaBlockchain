@@ -1,6 +1,6 @@
 package blockchain
 
-import models.Block
+import block.{BlockData, Transaction, Block}
 
 
 class Blockchain(var blockchain: List[Block]) {
@@ -15,13 +15,24 @@ class Blockchain(var blockchain: List[Block]) {
     blockchain
   }
 
+  /**
+   *
+   * @param block
+   * @param previousBlock
+   * @return
+   */
   def isValidBlock(block: Block, previousBlock: Block): Boolean = {
     if (previousBlock.index + 1 != block.index) false
     if (previousBlock.hash != block.previousHash) false
-    if (Block.hash(block.index, block.timestamp, block.data, block.previousHash) != block.hash) false
+    if (Block.hash(block) != block.hash) false
     true
   }
 
+  /**
+   * Checks if a Blockchain is valid, by checking the hashes of adjacent Blocks.
+   *
+   * @return true if the Blockchain is valid, else false
+   */
   def isValidChain(blockchainToValidate: List[Block]): Boolean = {
     if (blockchainToValidate.last != Blockchain.getGenesisBlock) false
 
@@ -30,13 +41,21 @@ class Blockchain(var blockchain: List[Block]) {
     def loop(blockchain: List[Block]): Boolean = blockchain match {
       case Nil => false
       case x :: Nil => true
-      case x :: xs => {
-        if (x.previousHash != xs.head.hash) false
+      case x :: xs =>
+        if (x.previousHash != xs.head.hash) return false
         loop(xs)
-      }
     }
+
+    false
   }
 
+
+  /**
+   * Replaces the Blockchain with a new chain.
+   *
+   * @return the new Blockchain, if the existing one was replaced.  Else, return the
+   *         existing Blockchain
+   */
   def replaceChain(newBlocks: List[Block]): List[Block] = {
     if (isValidChain(newBlocks) && newBlocks.length > blockchain.length) {
       blockchain = newBlocks
@@ -45,16 +64,24 @@ class Blockchain(var blockchain: List[Block]) {
   }
 }
 
+/**
+ *
+ */
 object Blockchain {
 
-  import models.Data
-
+  /**
+   * @return the Genesis block, which contains fixed data
+   */
   def getGenesisBlock: Block = {
-    new Block(
-      0,
-      System.currentTimeMillis(),
-      new Data("This is the Genesis block!"),
-      "816534932c2b7154836da6afc367695e6337db8a921823784c14378abed4f7d7"
+    val index = 0
+    val timestamp: Long = System.currentTimeMillis
+    val previousHash = "0"
+    val transaction = Transaction(
+      "63ec3ac02f822450039df13ddf7c3c0f19bab4acd4dc928c62fcd78d5ebc6dba", // random hash
+      null,
+      BlockData(List[Transaction](), List[Transaction]())
     )
+
+    new Block(index, timestamp, previousHash, transaction :: Nil)
   }
 }
