@@ -36,9 +36,11 @@ class Wallet(id: String, password: String, secret: String, keyPairs: List[KeyPai
   def getAddresses: List[String] = {
     null
   }
-
 }
 
+/**
+ * Factory methods for the Wallet class
+ */
 object Wallet {
 
   /**
