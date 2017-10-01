@@ -2,11 +2,19 @@ package blockchain
 
 import block.{BlockData, Transaction, Block}
 
-
+/**
+ * An abstract that encapsulates the blockchain model.  A blockchain is a
+ * List of blocks (List[Block]).  This class wraps and manages that List of blocks.
+ *
+ * This blockchain is a first-in-last-out (FILO) data structure.  It is a loose implementation of the
+ * abstract Stack data structure.
+ *
+ * As a result, new blocks are added to the head (top) of the blockchain (stack).
+ */
 class Blockchain(var blockchain: List[Block]) {
 
   /**
-    * Add blocks to the head of the Blockchain
+    * Add blocks to the head of the blockchain
     */
   def addBlock(block: Block): List[Block] = {
     if (isValidBlock(block, blockchain.head)) {
