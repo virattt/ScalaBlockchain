@@ -36,8 +36,6 @@ class Blockchain(var blockchain: List[Block]) {
   def isValidChain(blockchainToValidate: List[Block]): Boolean = {
     if (blockchainToValidate.last != Blockchain.getGenesisBlock) false
 
-    loop(blockchainToValidate)
-
     def loop(blockchain: List[Block]): Boolean = blockchain match {
       case Nil => false
       case x :: Nil => true
@@ -46,7 +44,7 @@ class Blockchain(var blockchain: List[Block]) {
         loop(xs)
     }
 
-    false
+    loop(blockchainToValidate)
   }
 
 
