@@ -6,10 +6,8 @@ import block.{BlockData, Transaction, Block}
 class Blockchain(var blockchain: List[Block]) {
 
   /**
-   *
-   * @param block
-   * @return
-   */
+    * Add blocks to the head of the Blockchain
+    */
   def addBlock(block: Block): List[Block] = {
     if (isValidBlock(block, blockchain.head)) {
       blockchain = block :: blockchain
@@ -18,16 +16,46 @@ class Blockchain(var blockchain: List[Block]) {
   }
 
   /**
-   *
-   * @param block
-   * @param previousBlock
-   * @return
+   * @return true if block is valid, else return false
    */
   def isValidBlock(block: Block, previousBlock: Block): Boolean = {
     if (previousBlock.index + 1 != block.index) false
     if (previousBlock.hash != block.previousHash) false
     if (Block.hash(block) != block.hash) false
     true
+  }
+
+  /**
+   * Checks if a Blockchain is valid, by checking the hashes of adjacent Blocks.
+   *
+   * @return true if the Blockchain is valid, else false
+   */
+  def isValidChain(blockchainToValidate: List[Block]): Boolean = {
+    if (blockchainToValidate.last != Blockchain.getGenesisBlock) false
+
+    def loop(blockchain: List[Block]): Boolean = blockchain match {
+      case Nil => false
+      case x :: Nil => true
+      case x :: xs =>
+        if (x.previousHash != xs.head.hash) return false
+        loop(xs)
+    }
+
+    loop(blockchainToValidate)
+  }
+
+
+  /**
+   * Replaces the Blockchain with a new chain.
+   *
+   * @return the new Blockchain, if the existing one was replaced.  Else, return the
+   *         existing Blockchain
+   */
+  def replaceChain(newBlocks: List[Block]): List[Block] = {
+    if (isValidChain(newBlocks) && newBlocks.length > blockchain.length) {
+      blockchain = newBlocks
+    }
+    blockchain
   }
 }
 
