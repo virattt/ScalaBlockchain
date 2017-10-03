@@ -4,7 +4,7 @@
 		module="scalablockchain$sbt_2.12"
 		revision="1.0"
 		status="integration"
-		publication="20170916232641"
+		publication="20171002220015"
 	/>
 	<configurations>
 		<conf name="default" visibility="public"/>

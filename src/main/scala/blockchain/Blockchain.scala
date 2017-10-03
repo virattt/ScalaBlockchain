@@ -24,7 +24,47 @@ class Blockchain(var blockchain: List[Block]) {
   }
 
   /**
-   * @return true if block is valid, else return false
+   * Returns all of the blocks in the blockchain
+   */
+  def getAllBlocks: List[Block] = {
+    blockchain
+  }
+
+  /**
+   * Returns a block, given its index
+   */
+  def getBlockByIndex(index: Int): Block = {
+    blockchain(index)
+  }
+
+  /**
+   * Returns a block, given its hash value
+   */
+  def getBlockByHash(hash: String): Block = {
+    blockchain.find(_.hash == hash) match {
+      case Some(block) => block
+      case None => null
+    }
+  }
+
+  /**
+   * Returns the last block in the blockchain.  The last block in our blockchain
+   * is at the tail of the list, since we always add new blocks to the head of
+   * the blockchain.
+   */
+  def getLastBlock: Block = {
+    blockchain.last
+  }
+
+  /**
+   * Returns the proof of work difficulty for a given index
+   */
+  def getDifficulty(index: Int): Long = {
+    0
+  }
+
+  /**
+   * Returns true if block is valid, else return false
    */
   def isValidBlock(block: Block, previousBlock: Block): Boolean = {
     if (previousBlock.index + 1 != block.index) false
@@ -34,9 +74,8 @@ class Blockchain(var blockchain: List[Block]) {
   }
 
   /**
-   * Checks if a Blockchain is valid, by checking the hashes of adjacent Blocks.
-   *
-   * @return true if the Blockchain is valid, else false
+   * Returns true if the Blockchain is valid, by checking the hashes of adjacent Blocks,
+   * else false
    */
   def isValidChain(blockchainToValidate: List[Block]): Boolean = {
     if (blockchainToValidate.last != Blockchain.getGenesisBlock) false
@@ -52,12 +91,9 @@ class Blockchain(var blockchain: List[Block]) {
     loop(blockchainToValidate)
   }
 
-
   /**
-   * Replaces the Blockchain with a new chain.
-   *
-   * @return the new Blockchain, if the existing one was replaced.  Else, return the
-   *         existing Blockchain
+   * Returns the new Blockchain, if the existing one was replaced.
+   * Else, return the existing Blockchain
    */
   def replaceChain(newBlocks: List[Block]): List[Block] = {
     if (isValidChain(newBlocks) && newBlocks.length > blockchain.length) {
@@ -65,10 +101,9 @@ class Blockchain(var blockchain: List[Block]) {
     }
     blockchain
   }
-}
 
 /**
- *
+ * A helper singleton for the Blockchain
  */
 object Blockchain {
 

@@ -1,3 +1,6 @@
+[warn] Multiple dependencies with the same organization/name but different versions. To avoid conflict, pick one version:
+[warn]  * org.scala-lang.modules:scala-xml_2.12:(1.0.5, 1.0.6)
+[warn]  * org.scala-lang:scala-reflect:(2.12.0, 2.12.3)
 [debug] :: resolving dependencies :: default#scalablockchain$sources_javadoc_2.12;1.0
 [debug] 	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool]
 [debug] 	validate = true
@@ -6,13 +9,30 @@
 [debug] == resolving dependencies for default#scalablockchain$sources_javadoc_2.12;1.0 [compile]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile->default(compile)]
 [info] Resolving org.scala-lang#scala-library;2.12.3 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@69dc922d
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1c36e52b
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-library;2.12.3
 [debug] 	found org.scala-lang#scala-library;2.12.3 in sbt-chain
 [debug] 	[2.12.3] org.scala-lang#scala-library;2.12.3
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile->runtime]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile->compile]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->default(compile)]
+[info] Resolving org.scalactic#scalactic_2.12;3.0.1 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@585134b5
+[debug] sbt-chain: module revision found in cache: org.scalactic#scalactic_2.12;3.0.1
+[debug] 	found org.scalactic#scalactic_2.12;3.0.1 in sbt-chain
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->default(compile)]
+[info] Resolving org.scala-lang#scala-reflect;2.12.0 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@355ef2d5
+[debug] sbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.12.0
+[debug] 	found org.scala-lang#scala-reflect;2.12.0 in sbt-chain
+[debug] 	[2.12.0] org.scala-lang#scala-reflect;2.12.0
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->master]
 [debug] resolving dependencies for configuration 'runtime'
 [debug] == resolving dependencies for default#scalablockchain$sources_javadoc_2.12;1.0 [runtime]
 [debug] == resolving dependencies for default#scalablockchain$sources_javadoc_2.12;1.0 [compile]
@@ -20,10 +40,26 @@
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile->runtime]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile->compile]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->master]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [runtime->default(compile)]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [runtime->runtime]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [runtime->compile]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [runtime->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [runtime->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [runtime->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [runtime->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [runtime->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [runtime->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [runtime->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [runtime->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [runtime->master]
 [debug] resolving dependencies for configuration 'test'
 [debug] == resolving dependencies for default#scalablockchain$sources_javadoc_2.12;1.0 [test]
 [debug] == resolving dependencies for default#scalablockchain$sources_javadoc_2.12;1.0 [runtime]
@@ -32,14 +68,62 @@
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile->runtime]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile->compile]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->master]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [runtime->default(compile)]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [runtime->runtime]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [runtime->compile]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [runtime->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [runtime->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [runtime->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [runtime->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [runtime->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [runtime->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [runtime->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [runtime->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [runtime->master]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [test->default(compile)]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [test->runtime]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [test->compile]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [test->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [test->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [test->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [test->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [test->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [test->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [test->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [test->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [test->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalatest#scalatest_2.12;3.0.1 [test->default(compile)]
+[info] Resolving org.scalatest#scalatest_2.12;3.0.1 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@3b0bd534
+[debug] sbt-chain: module revision found in cache: org.scalatest#scalatest_2.12;3.0.1
+[debug] 	found org.scalatest#scalatest_2.12;3.0.1 in sbt-chain
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalatest#scalatest_2.12;3.0.1 [test->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalatest#scalatest_2.12;3.0.1 [test->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalatest#scalatest_2.12;3.0.1 [test->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->default(compile)]
+[info] Resolving org.scala-lang.modules#scala-xml_2.12;1.0.5 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@25c88762
+[debug] sbt-chain: module revision found in cache: org.scala-lang.modules#scala-xml_2.12;1.0.5
+[debug] 	found org.scala-lang.modules#scala-xml_2.12;1.0.5 in sbt-chain
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->default(compile)]
+[info] Resolving org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@33b8e2f
+[debug] sbt-chain: module revision found in cache: org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4
+[debug] 	found org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 in sbt-chain
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->master]
 [debug] resolving dependencies for configuration 'provided'
 [debug] == resolving dependencies for default#scalablockchain$sources_javadoc_2.12;1.0 [provided]
 [debug] resolving dependencies for configuration 'optional'
@@ -51,12 +135,28 @@
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile->runtime]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile->compile]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->master]
 [debug] == resolving dependencies for default#scalablockchain$sources_javadoc_2.12;1.0 [optional]
 [debug] == resolving dependencies for default#scalablockchain$sources_javadoc_2.12;1.0 [provided]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile-internal->default(compile)]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile-internal->runtime]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile-internal->compile]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile-internal->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile-internal->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile-internal->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile-internal->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile-internal->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile-internal->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile-internal->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile-internal->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile-internal->master]
 [debug] resolving dependencies for configuration 'runtime-internal'
 [debug] == resolving dependencies for default#scalablockchain$sources_javadoc_2.12;1.0 [runtime-internal]
 [debug] == resolving dependencies for default#scalablockchain$sources_javadoc_2.12;1.0 [runtime]
@@ -65,15 +165,39 @@
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile->runtime]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile->compile]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->master]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [runtime->default(compile)]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [runtime->runtime]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [runtime->compile]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [runtime->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [runtime->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [runtime->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [runtime->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [runtime->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [runtime->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [runtime->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [runtime->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [runtime->master]
 [debug] == resolving dependencies for default#scalablockchain$sources_javadoc_2.12;1.0 [optional]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [runtime-internal->default(compile)]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [runtime-internal->runtime]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [runtime-internal->compile]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [runtime-internal->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [runtime-internal->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [runtime-internal->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [runtime-internal->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [runtime-internal->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [runtime-internal->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [runtime-internal->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [runtime-internal->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [runtime-internal->master]
 [debug] resolving dependencies for configuration 'test-internal'
 [debug] == resolving dependencies for default#scalablockchain$sources_javadoc_2.12;1.0 [test-internal]
 [debug] == resolving dependencies for default#scalablockchain$sources_javadoc_2.12;1.0 [test]
@@ -83,20 +207,76 @@
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile->runtime]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile->compile]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [compile->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [compile->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [compile->master]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [runtime->default(compile)]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [runtime->runtime]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [runtime->compile]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [runtime->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [runtime->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [runtime->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [runtime->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [runtime->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [runtime->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [runtime->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [runtime->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [runtime->master]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [test->default(compile)]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [test->runtime]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [test->compile]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [test->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [test->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [test->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [test->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [test->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [test->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [test->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [test->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [test->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalatest#scalatest_2.12;3.0.1 [test->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalatest#scalatest_2.12;3.0.1 [test->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalatest#scalatest_2.12;3.0.1 [test->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalatest#scalatest_2.12;3.0.1 [test->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->master]
 [debug] == resolving dependencies for default#scalablockchain$sources_javadoc_2.12;1.0 [optional]
 [debug] == resolving dependencies for default#scalablockchain$sources_javadoc_2.12;1.0 [provided]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [test-internal->default(compile)]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [test-internal->runtime]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [test-internal->compile]
 [debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-library;2.12.3 [test-internal->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [test-internal->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [test-internal->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [test-internal->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalactic#scalactic_2.12;3.0.1 [test-internal->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [test-internal->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [test-internal->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [test-internal->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang#scala-reflect;2.12.0 [test-internal->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalatest#scalatest_2.12;3.0.1 [test-internal->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalatest#scalatest_2.12;3.0.1 [test-internal->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalatest#scalatest_2.12;3.0.1 [test-internal->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scalatest#scalatest_2.12;3.0.1 [test-internal->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test-internal->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test-internal->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test-internal->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test-internal->master]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test-internal->default(compile)]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test-internal->runtime]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test-internal->compile]
+[debug] == resolving dependencies default#scalablockchain$sources_javadoc_2.12;1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test-internal->master]
 [debug] resolving dependencies for configuration 'plugin'
 [debug] == resolving dependencies for default#scalablockchain$sources_javadoc_2.12;1.0 [plugin]
 [debug] resolving dependencies for configuration 'sources'
@@ -154,7 +334,7 @@
 [debug] 	public: downloading https://repo1.maven.org/maven2/jline/jline/2.14.4/jline-2.14.4.pom
 [debug] 	public: downloading https://repo1.maven.org/maven2/jline/jline/2.14.4/jline-2.14.4.pom.sha1
 [debug] sha1 OK for https://repo1.maven.org/maven2/jline/jline/2.14.4/jline-2.14.4.pom
-[debug] 	[SUCCESSFUL ] jline#jline;2.14.4!jline.pom(pom.original) (81ms)
+[debug] 	[SUCCESSFUL ] jline#jline;2.14.4!jline.pom(pom.original) (108ms)
 [info] Resolving org.sonatype.oss#oss-parent;9 ...
 [debug] sbt-chain: Checking cache for: dependency: org.sonatype.oss#oss-parent;9 {}
 [debug] sbt-chain: module revision found in cache: org.sonatype.oss#oss-parent;9
@@ -167,6 +347,21 @@
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.3!scala-library.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.3!scala-library.jar(doc)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.3!scala-library.jar(src)
+[debug] 	[NOT REQUIRED] org.scalactic#scalactic_2.12;3.0.1!scalactic_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.scalactic#scalactic_2.12;3.0.1!scalactic_2.12.jar(doc)
+[debug] 	[NOT REQUIRED] org.scalactic#scalactic_2.12;3.0.1!scalactic_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.0!scala-reflect.jar(doc)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.0!scala-reflect.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.0!scala-reflect.jar
+[debug] 	[NOT REQUIRED] org.scalatest#scalatest_2.12;3.0.1!scalatest_2.12.jar
+[debug] 	[NOT REQUIRED] org.scalatest#scalatest_2.12;3.0.1!scalatest_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.scalatest#scalatest_2.12;3.0.1!scalatest_2.12.jar(doc)
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.5!scala-xml_2.12.jar(doc)
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.5!scala-xml_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.5!scala-xml_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4!scala-parser-combinators_2.12.jar(doc)
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4!scala-parser-combinators_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4!scala-parser-combinators_2.12.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.3!scala-compiler.jar(doc)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.3!scala-compiler.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.3!scala-reflect.jar(doc)
@@ -175,7 +370,7 @@
 [debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(doc)
 [debug] 	[NOT REQUIRED] jline#jline;2.14.4!jline.jar(src)
 [debug] 	[NOT REQUIRED] jline#jline;2.14.4!jline.jar(doc)
-[debug] :: resolution report :: resolve 223ms :: artifacts dl 9ms
+[debug] :: resolution report :: resolve 839ms :: artifacts dl 10ms
 [debug] 	report for default#scalablockchain$sources_javadoc_2.12;1.0 compile produced in /Users/virat/dev/scala/ScalaBlockchain/target/resolution-cache/reports/default-scalablockchain$sources_javadoc_2.12-compile.xml
 [debug] 	report for default#scalablockchain$sources_javadoc_2.12;1.0 runtime produced in /Users/virat/dev/scala/ScalaBlockchain/target/resolution-cache/reports/default-scalablockchain$sources_javadoc_2.12-runtime.xml
 [debug] 	report for default#scalablockchain$sources_javadoc_2.12;1.0 test produced in /Users/virat/dev/scala/ScalaBlockchain/target/resolution-cache/reports/default-scalablockchain$sources_javadoc_2.12-test.xml
@@ -189,4 +384,4 @@
 [debug] 	report for default#scalablockchain$sources_javadoc_2.12;1.0 docs produced in /Users/virat/dev/scala/ScalaBlockchain/target/resolution-cache/reports/default-scalablockchain$sources_javadoc_2.12-docs.xml
 [debug] 	report for default#scalablockchain$sources_javadoc_2.12;1.0 pom produced in /Users/virat/dev/scala/ScalaBlockchain/target/resolution-cache/reports/default-scalablockchain$sources_javadoc_2.12-pom.xml
 [debug] 	report for default#scalablockchain$sources_javadoc_2.12;1.0 scala-tool produced in /Users/virat/dev/scala/ScalaBlockchain/target/resolution-cache/reports/default-scalablockchain$sources_javadoc_2.12-scala-tool.xml
-[debug] 	resolve done (223ms resolve - 9ms download)
+[debug] 	resolve done (839ms resolve - 10ms download)
