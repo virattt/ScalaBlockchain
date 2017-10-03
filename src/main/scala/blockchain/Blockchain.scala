@@ -6,7 +6,7 @@ import block.{BlockData, Transaction, Block}
 class Blockchain(var blockchain: List[Block]) {
 
   /**
-    * Add blocks to the head of the Blockchain
+    * Add blocks to the head of the Blockchain list
     */
   def addBlock(block: Block): List[Block] = {
     if (isValidBlock(block, blockchain.head)) {
