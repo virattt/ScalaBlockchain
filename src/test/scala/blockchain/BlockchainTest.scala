@@ -26,4 +26,24 @@ class BlockchainTest extends FlatSpec {
 
     assert(lastBlock.hash == z.hash)
   }
+
+  "isValidBlock" should "return true if the block is valid" in {
+    val y: Block = Block(0, 100, "0", List[Transaction]())
+    val x: Block = Block(1, 200, y.hash, List[Transaction]())
+
+    val blockchain: Blockchain = new Blockchain(List[Block](x, y))
+    val isValidBlock: Boolean = blockchain.isValidBlock(x, y)
+
+    assert(isValidBlock)
+  }
+
+  "isValidBlock" should "return false if the block is NOT valid" in {
+    val y: Block = Block(0, 100, "0", List[Transaction]())
+    val x: Block = Block(1, 200, "invalid hash", List[Transaction]())
+
+    val blockchain: Blockchain = new Blockchain(List[Block](x, y))
+    val isValidBlock: Boolean = blockchain.isValidBlock(x, y)
+
+    assert(!isValidBlock)
+  }
 }
