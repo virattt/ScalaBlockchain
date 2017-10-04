@@ -96,7 +96,7 @@ class Blockchain(var blockchain: List[Block]) {
     * Else, return the existing Blockchain
     */
   def replaceChain(newBlocks: List[Block]): List[Block] = {
-    if (isValidChain(newBlocks) && newBlocks.length > blockchain.length) {
+    if (isValidChain(newBlocks) && (newBlocks.length > blockchain.length)) {
       blockchain = newBlocks
     }
     blockchain
