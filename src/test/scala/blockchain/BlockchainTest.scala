@@ -46,4 +46,70 @@ class BlockchainTest extends FlatSpec {
 
     assert(!isValidBlock)
   }
+
+  "isValidChain" should "return true if the blockchain is valid" in {
+    val genesis: Block = Blockchain.getGenesisBlock
+    val z: Block = Block(1, 100, genesis.hash, List[Transaction]())
+    val y: Block = Block(2, 200, z.hash, List[Transaction]())
+    val x: Block = Block(3, 300, y.hash, List[Transaction]())
+
+    val blockchain: Blockchain = new Blockchain(List[Block](x, y, z, genesis))
+    val isValidChain: Boolean = blockchain.isValidChain(blockchain.getAllBlocks)
+
+    assert(isValidChain)
+  }
+
+  "isValidChain" should "return true if the blockchain is NOT valid" in {
+    val genesis: Block = Blockchain.getGenesisBlock
+    val z: Block = Block(1, 100, genesis.hash, List[Transaction]())
+    val y: Block = Block(2, 200, z.hash, List[Transaction]())
+    val x: Block = Block(3, 300, "Invalid hash", List[Transaction]())
+
+    val blockchain: Blockchain = new Blockchain(List[Block](x, y, z, genesis))
+    val isValidChain: Boolean = blockchain.isValidChain(blockchain.getAllBlocks)
+
+    assert(!isValidChain)
+  }
+
+  "replaceChain" should "replace existing chain when new chain is longer and valid" in {
+    val genesis: Block = Blockchain.getGenesisBlock
+    val z: Block = Block(1, 100, genesis.hash, List[Transaction]())
+    val y: Block = Block(2, 200, z.hash, List[Transaction]())
+    val x: Block = Block(3, 300, y.hash, List[Transaction]())
+
+    val existingChain: Blockchain = new Blockchain(List[Block](y, z, genesis))
+    val newChain: Blockchain = new Blockchain(List[Block](x, y, z, genesis))
+
+    val chain: List[Block] = existingChain.replaceChain(newChain.getAllBlocks)
+
+    assert(chain == newChain.getAllBlocks)
+  }
+
+  "replaceChain" should "NOT replace existing chain when new chain is shorter" in {
+    val genesis: Block = Blockchain.getGenesisBlock
+    val z: Block = Block(1, 100, genesis.hash, List[Transaction]())
+    val y: Block = Block(2, 200, z.hash, List[Transaction]())
+    val x: Block = Block(3, 300, y.hash, List[Transaction]())
+
+    val existingChain: Blockchain = new Blockchain(List[Block](y, z, genesis))
+    val newChain: Blockchain = new Blockchain(List[Block](z, genesis))
+
+    val chain: List[Block] = existingChain.replaceChain(newChain.getAllBlocks)
+
+    assert(chain != newChain.getAllBlocks)
+  }
+
+  "replaceChain" should "NOT replace existing chain when new chain is invalid" in {
+    val genesis: Block = Blockchain.getGenesisBlock
+    val z: Block = Block(1, 100, genesis.hash, List[Transaction]())
+    val y: Block = Block(2, 200, z.hash, List[Transaction]())
+    val x: Block = Block(3, 300, "Invalid hash", List[Transaction]())
+
+    val existingChain: Blockchain = new Blockchain(List[Block](y, z, genesis))
+    val newChain: Blockchain = new Blockchain(List[Block](x, y, z, genesis))
+
+    val chain: List[Block] = existingChain.replaceChain(newChain.getAllBlocks)
+
+    assert(chain != newChain.getAllBlocks)
+  }
 }
