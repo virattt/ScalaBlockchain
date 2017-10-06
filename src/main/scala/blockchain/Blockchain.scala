@@ -113,8 +113,6 @@ class Blockchain(var blockchain: List[Block], var pendingTransactions: List[Tran
   def getALlTransactions: List[Transaction] = {
     pendingTransactions
   }
-
-  
 }
 
 /**
