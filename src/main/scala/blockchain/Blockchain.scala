@@ -10,8 +10,13 @@ import block.{BlockData, Transaction, Block}
   * abstract Stack data structure.
   *
   * As a result, new blocks are added to the head (top) of the blockchain (stack).
+  *
+  * @param blockchain: The underlying list of Blocks
+  * @param pendingTransactions - the list of Transactions that are pending and have yet to be added to
+  *                              the chain.  Once a ransaction (or transactions) is added to the
+  *                              chain, it is removed from [[pendingTransactions]]
   */
-class Blockchain(var blockchain: List[Block]) {
+class Blockchain(var blockchain: List[Block], var pendingTransactions: List[Transaction]) {
 
   /**
     * Add blocks to the head of the blockchain
@@ -101,6 +106,15 @@ class Blockchain(var blockchain: List[Block]) {
     }
     blockchain
   }
+
+  /**
+    * Returns a list of all of the pending transactions for this blockchain
+    */
+  def getALlTransactions: List[Transaction] = {
+    pendingTransactions
+  }
+
+  
 }
 
 /**
