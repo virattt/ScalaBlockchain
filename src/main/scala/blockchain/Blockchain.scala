@@ -1,6 +1,7 @@
 package blockchain
 
-import block.{BlockData, Transaction, Block}
+import block.{Block, BlockData}
+import transaction.{InputTransaction, OutputTransaction, Transaction}
 
 /**
   * An abstraction that encapsulates the blockchain model.  A blockchain is a
@@ -41,7 +42,7 @@ class Blockchain(var blockchain: List[Block]) {
     * Returns a block, given its hash value
     */
   def getBlockByHash(hash: String): Block = {
-    blockchain.find(_.hash == hash) match {
+    blockchain.find(_.toHash == hash) match {
       case Some(block) => block
       case None => null
     }
@@ -68,8 +69,7 @@ class Blockchain(var blockchain: List[Block]) {
     */
   def isValidBlock(block: Block, previousBlock: Block): Boolean = {
     if (block.index != previousBlock.index + 1) return false
-    if (block.previousHash != previousBlock.hash) return false
-    if (Block.hash(block) != block.hash) return false
+    if (block.previousHash != previousBlock.toHash) return false
     true
   }
 
@@ -84,7 +84,7 @@ class Blockchain(var blockchain: List[Block]) {
       case Nil => false
       case x :: Nil => true
       case x :: xs =>
-        if (x.previousHash != xs.head.hash) return false
+        if (x.previousHash != xs.head.toHash) return false
         loop(xs)
     }
 
@@ -118,7 +118,7 @@ object Blockchain {
     val transaction = Transaction(
       "63ec3ac02f822450039df13ddf7c3c0f19bab4acd4dc928c62fcd78d5ebc6dba", // random hash
       null,
-      BlockData(List[Transaction](), List[Transaction]())
+      BlockData(List[InputTransaction](), List[OutputTransaction]())
     )
 
     new Block(index, timestamp, previousHash, transaction :: Nil)

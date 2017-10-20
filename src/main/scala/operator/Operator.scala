@@ -1,7 +1,7 @@
 package operator
 
-import block.Transaction
 import blockchain.Blockchain
+import transaction.Transaction
 import wallet.Wallet
 
 class Operator(blockchain: Blockchain, wallets: List[Wallet]) {
