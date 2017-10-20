@@ -1,7 +1,8 @@
 package node
 
-import block.{Transaction, Block}
+import block.Block
 import blockchain.Blockchain
+import transaction.Transaction
 
 class Node {
 
