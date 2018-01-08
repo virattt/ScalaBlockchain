@@ -54,7 +54,11 @@ case class Transaction(id: String, hash: String, blockData: BlockData) {
           + inputTransaction.index
           + inputTransaction.fromAddress)
 
-      val isValidSignature = Crypto.isValidSignature(inputTransaction.fromAddress, inputTransaction.signature, inputHash)
+      val isValidSignature = Crypto.isValidSignature( //
+        BigInt(inputTransaction.fromAddress), //
+        BigInt(inputTransaction.signature), //
+        inputHash //
+      )
 
       if (!isValidSignature) return false
 
