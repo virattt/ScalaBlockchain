@@ -34,7 +34,6 @@ case class Block(index: Int, timestamp: Long, previousHash: String, transactions
 ```
 
 ### The Wallet 
-
 ```
 /**
   * A wallet class, which represents a list of KeyPair values
