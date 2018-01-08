@@ -4,7 +4,7 @@ A simple blockchain implementation in Scala.  Developed for learning purposes.
 ## Architecture
 The following objects are the core components of this blockchain implementation.
 
-### A Block
+### Block
 ```
 case class Block(index: Int, timestamp: Long, previousHash: String, transactions: List[Transaction]) {
   def hash: String = Crypto.hash(index.toString + timestamp.toString + previousHash.toString + transactions.toString)
@@ -33,7 +33,7 @@ case class Block(index: Int, timestamp: Long, previousHash: String, transactions
 }
 ```
 
-### The Wallet 
+### Wallet 
 ```
 /**
   * A wallet class, which represents a list of KeyPair values
