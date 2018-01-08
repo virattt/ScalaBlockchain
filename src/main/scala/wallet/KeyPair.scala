@@ -1,6 +1,9 @@
 package wallet
 
-import crypto.Crypto
+import crypto.ecdsa.{ECDSA, Key}
+import io.github.nremond.SecureHash
+
+import scala.util.Random
 
 /**
   * A key pair value of secret key and public key
@@ -18,13 +21,15 @@ object KeyPair {
     * Generates a public key for
     */
   def generatePublicKey(text: String): String = {
-    Crypto.generatePublicKey(text)
+    val secret = BigInt(192, new Random)
+    val key = Key.sec(secret, ECDSA.p192)
+    ECDSA.sign(key, text, "SHA-256").toString(16)
   }
 
   /**
     * @return a secret for a new Wallet
     */
   def generateSecret(password: String): String = {
-    Crypto.generateSecret(password)
+    SecureHash.createHash(password)
   }
 }
