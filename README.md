@@ -1,17 +1,17 @@
 # Scala Blockchain
 A simple blockchain implementation in Scala.  Developed for learning purposes.
 
-# Architecture
+## Architecture
 The following objects are the core components of this blockchain implementation.
 
-### A Block
+## A Block
 ```
 case class Block(index: Int, timestamp: Long, previousHash: String, transactions: List[Transaction]) {
   def hash: String = Crypto.hash(index.toString + timestamp.toString + previousHash.toString + transactions.toString)
 }
 ```
 
-Sample Block JSON 
+### Sample Block JSON 
 ```
 {
 	"index": 0, // (first block: 0)
@@ -33,7 +33,7 @@ Sample Block JSON
 }
 ```
 
-### The Wallet 
+## The Wallet 
 
 ```
 /**
@@ -50,5 +50,3 @@ class Wallet(id: String, keyPairs: List[KeyPair]) {
   def getPublicKeys: List[String]
 }
 ```
-
-###
