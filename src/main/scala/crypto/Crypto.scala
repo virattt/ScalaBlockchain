@@ -3,6 +3,8 @@ package crypto
 import java.math.BigInteger
 import java.security.MessageDigest
 
+import crypto.ecdsa.{ECDSA, Key}
+
 /**
   * A helper object for doing crypto things like hashing, etc.
   */
@@ -23,7 +25,7 @@ object Crypto {
     String.format("%064x", new BigInteger(1, message))
   }
 
-  def isValidSignature(publicKey: String, signature: String, messageHash: String): Boolean = {
-    true
+  def isValidSignature(publicKey: BigInt, signature: BigInt, messageHash: String): Boolean = {
+    ECDSA.verify(signature, Key.pub(publicKey, ECDSA.p192), messageHash)
   }
 }

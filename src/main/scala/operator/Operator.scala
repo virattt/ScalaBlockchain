@@ -4,6 +4,14 @@ import blockchain.Blockchain
 import transaction.Transaction
 import wallet.Wallet
 
+/**
+  * The operator's primary function is handle wallets and addresses, as well as transaction creation.
+  * Most of its operations are CRUD related. Each operator has its own list of wallets and addresses,
+  * meaning that it isn't synchronized between nodes.
+  *
+  * @param blockchain
+  * @param wallets
+  */
 class Operator(blockchain: Blockchain, wallets: List[Wallet]) {
 
   /**
