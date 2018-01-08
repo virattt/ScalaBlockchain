@@ -13,6 +13,10 @@ import transaction.{InputTransaction, OutputTransaction, Transaction}
   * As a result, new blocks are added to the head (top) of the blockchain (stack).
   */
 class Blockchain(var blockchain: List[Block]) {
+  // Proof-of-work difficulty settings
+  val BASE_DIFFICULTY = Integer.MAX_VALUE;
+  val EVERY_X_BLOCKS = 5;
+  val POW_CURVE = 5;
 
   /**
     * Add blocks to the head of the blockchain
@@ -42,7 +46,7 @@ class Blockchain(var blockchain: List[Block]) {
     * Returns a block, given its hash value
     */
   def getBlockByHash(hash: String): Block = {
-    blockchain.find(_.toHash == hash) match {
+    blockchain.find(_.hash == hash) match {
       case Some(block) => block
       case None => null
     }
@@ -58,10 +62,16 @@ class Blockchain(var blockchain: List[Block]) {
   }
 
   /**
-    * Returns the proof of work difficulty for a given index
+    * Returns the proof of work difficulty for a given index.
+    *
+    * Calculates the difficulty based on the index since
+    * the difficulty value increases EVERY_X_BLOCKS.
     */
-  def getDifficulty(index: Int): Long = {
-    0
+  def getDifficulty(index: Int): Double = {
+    Math.max(
+      Math.floor(BASE_DIFFICULTY / Math.pow(Math.floor(((blockchain.length + 1) / EVERY_X_BLOCKS) + 1), POW_CURVE)),
+      0
+    )
   }
 
   /**
@@ -69,7 +79,7 @@ class Blockchain(var blockchain: List[Block]) {
     */
   def isValidBlock(block: Block, previousBlock: Block): Boolean = {
     if (block.index != previousBlock.index + 1) return false
-    if (block.previousHash != previousBlock.toHash) return false
+    if (block.previousHash != previousBlock.hash) return false
     true
   }
 
@@ -84,7 +94,7 @@ class Blockchain(var blockchain: List[Block]) {
       case Nil => false
       case x :: Nil => true
       case x :: xs =>
-        if (x.previousHash != xs.head.toHash) return false
+        if (x.previousHash != xs.head.hash) return false
         loop(xs)
     }
 
