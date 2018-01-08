@@ -31,5 +31,5 @@ case class Block(index: Int, //
   /**
    * Return the hash value for this Block
    */
-  def toHash: String = Crypto.hash(index.toString + timestamp.toString + previousHash.toString + transactions.toString)
+  def hash: String = Crypto.hash(index.toString + timestamp.toString + previousHash.toString + transactions.toString)
 }
