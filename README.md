@@ -36,7 +36,8 @@ case class Block(index: Int, timestamp: Long, previousHash: String, transactions
 ### Wallet 
 ```
 /**
-  * A wallet class, which represents a list of KeyPair values
+  * A wallet class, which encapsulates a list of KeyPair values. A KeyPair
+  * has a public key and secret key.
   *
   * @param id the ID of this wallet
   * @param keyPairs the list of KeyPairs in this wallet
