@@ -7,7 +7,7 @@ The following objects are the core components of this blockchain implementation.
 ### Block
 ```
 case class Block(index: Int, timestamp: Long, previousHash: String, transactions: List[Transaction]) {
-  def hash: String = Crypto.hash(index.toString + timestamp.toString + previousHash.toString + transactions.toString)
+  def hash: String
 }
 ```
 
@@ -42,10 +42,12 @@ case class Block(index: Int, timestamp: Long, previousHash: String, transactions
   * @param keyPairs the list of KeyPairs in this wallet
   */
 class Wallet(id: String, keyPairs: List[KeyPair]) {
-
-  def getPublicKeyByIndex(index: Int): String
-  def getSecretByPublicKey(publicKey: String): String
-  def doesPublicKeyExist(publicKey: String): Boolean
   def getPublicKeys: List[String]
+  
+  def getPublicKeyByIndex(index: Int): String
+  
+  def getSecretByPublicKey(publicKey: String): String
+  
+  def doesPublicKeyExist(publicKey: String): Boolean
 }
 ```
