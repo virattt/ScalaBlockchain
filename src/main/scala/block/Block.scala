@@ -1,5 +1,8 @@
 package block
 
+import java.math.BigInteger
+import java.security.MessageDigest
+
 import crypto.Crypto
 import transaction.Transaction
 
@@ -23,13 +26,45 @@ import transaction.Transaction
  *  "hash": "c4e0b8df46...199754d1ed" // hash taken from the contents of the block: sha256 (index + previousHash + timestamp + nonce + transactions) (64 bytes)
  * }
  */
-case class Block(index: Int, //
-                 timestamp: Long, //
-                 previousHash: String, //
-                 transactions: List[Transaction]) {
+case class Block(val index: Int, //
+                 val timestamp: Long, //
+                 val previousHash: String, //
+                 val transactions: List[Transaction]) {
 
   /**
    * Return the hash value for this Block
    */
-  def hash: String = Crypto.hash(index.toString + timestamp.toString + previousHash.toString + transactions.toString)
+  def hash: String = Block.hash(this)
+
+  /**
+   * Returns true if block is valid, else return false
+   */
+  def isValid(previousBlock: Block): Boolean = {
+    if (index != previousBlock.index + 1) return false
+    if (previousHash != previousBlock.hash) return false
+    true
+  }
+}
+
+/**
+ * Helper methods for the Block class
+ */
+object Block {
+
+  /**
+   * @return a hashed value of a Block
+   */
+  def hash(block: Block): String = {
+    hash(block.index.toString
+        + block.timestamp.toString
+        + block.previousHash.toString
+        + block.transactions.toString)
+  }
+
+  /**
+   * @return a hashed value of some String input
+   */
+  def hash(input: String): String = {
+    Crypto.hash(input)
+  }
 }
