@@ -30,4 +30,4 @@ package block
  * }
 */
 
-case class Transaction(id: String, hash: String, blockData: BlockData)
+case class Transaction(val id: String, val hash: String, val blockData: BlockData)

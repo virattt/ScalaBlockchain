@@ -23,10 +23,10 @@ import java.security.MessageDigest
  *  "hash": "c4e0b8df46...199754d1ed" // hash taken from the contents of the block: sha256 (index + previousHash + timestamp + nonce + transactions) (64 bytes)
  * }
  */
-case class Block(index: Int, //
-                 timestamp: Long, //
-                 previousHash: String, //
-                 transactions: List[Transaction]) {
+case class Block(val index: Int, //
+                 val timestamp: Long, //
+                 val previousHash: String, //
+                 val transactions: List[Transaction]) {
 
   /**
    * @return the hash value for this Block
