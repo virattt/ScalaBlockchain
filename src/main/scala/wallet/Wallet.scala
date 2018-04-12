@@ -6,7 +6,14 @@ package wallet
   * @param id the ID of this wallet
   * @param keyPairs the list of KeyPairs in this wallet
   */
-class Wallet(id: String, keyPairs: List[KeyPair]) {
+class Wallet(val id: String, val password: String, var keyPairs: List[KeyPair]) {
+
+  /**
+    * Returns all public keys for this wallet
+    */
+  def getPublicKeys: List[String] = {
+    keyPairs.map(keyPair => keyPair.publicKey)
+  }
 
   /**
     * Returns a public key, given a KeyPair's index
@@ -35,10 +42,9 @@ class Wallet(id: String, keyPairs: List[KeyPair]) {
     }
   }
 
-  /**
-   * Returns all public keys for this wallet
-   */
-  def getPublicKeys: List[String] = {
-    keyPairs.map(keyPair => keyPair.publicKey)
+  def addKeyPair(keyPair: KeyPair): Boolean = {
+    if (keyPairs.contains(keyPair)) return false
+    keyPairs = keyPair :: keyPairs
+    true
   }
 }
