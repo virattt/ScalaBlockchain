@@ -1,10 +1,18 @@
 package operator
 
-import block.Transaction
 import blockchain.Blockchain
+import transaction.Transaction
 import wallet.Wallet
 
-class Operator(blockchain: Blockchain, wallets: List[Wallet]) {
+/**
+  * The operator's primary function is to handle wallets and addresses, as well as transaction creation.
+  * Most of its operations are CRUD related. Each operator has its own list of wallets and addresses,
+  * meaning that it isn't synchronized between nodes on the network.
+  *
+  * @param blockchain
+  * @param wallets
+  */
+class Operator(blockchain: Blockchain, var wallets: List[Wallet]) {
 
   /**
    *
@@ -12,25 +20,9 @@ class Operator(blockchain: Blockchain, wallets: List[Wallet]) {
    * @return
    */
   def addWallet(wallet: Wallet): Boolean = {
-    false
-  }
-
-  /**
-   *
-   * @param password
-   * @return
-   */
-  def createWalletFromPassword(password: String): Wallet = {
-    null
-  }
-
-  /**
-   *
-   * @param hash
-   * @return
-   */
-  def createWalletFromHash(hash: String): Wallet = {
-    null
+    if (wallets.contains(wallet)) return false
+    wallets = wallet :: wallets
+    true
   }
 
   /**
@@ -40,7 +32,7 @@ class Operator(blockchain: Blockchain, wallets: List[Wallet]) {
    * @return
    */
   def isWalletPasswordValid(wallet: Wallet, password: String): Boolean = {
-    false
+    wallet.password == password
   }
 
   /**
@@ -48,7 +40,7 @@ class Operator(blockchain: Blockchain, wallets: List[Wallet]) {
    * @return
    */
   def getWallets: List[Wallet] = {
-    null
+    wallets
   }
 
   /**
@@ -57,7 +49,10 @@ class Operator(blockchain: Blockchain, wallets: List[Wallet]) {
    * @return
    */
   def getWalletById(walletId: String): Wallet = {
-    null
+    wallets.find(wallet => wallet.id == walletId) match {
+      case Some(wallet) => wallet
+      case None => null
+    }
   }
 
   /**

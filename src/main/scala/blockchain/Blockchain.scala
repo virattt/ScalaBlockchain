@@ -1,6 +1,7 @@
 package blockchain
 
-import block.{BlockData, Transaction, Block}
+import block.{Block, BlockData}
+import transaction.{InputTransaction, OutputTransaction, Transaction}
 
 /**
   * An abstraction that encapsulates the blockchain model.  A blockchain is a
@@ -62,9 +63,9 @@ class Blockchain(var blockchain: List[Block], var transactions: List[Transaction
   }
 
   /**
-   * Returns true if the Blockchain is valid, by checking the hashes of adjacent Blocks,
-   * else false
-   */
+    * Returns true if the Blockchain is valid, by checking the hashes of adjacent Blocks,
+    * else false
+    */
   def isValidChain(blockchainToValidate: List[Block]): Boolean = {
     if (blockchainToValidate.last != Blockchain.getGenesisBlock) false
 
@@ -158,7 +159,7 @@ object Blockchain {
     val transaction = Transaction(
       "63ec3ac02f822450039df13ddf7c3c0f19bab4acd4dc928c62fcd78d5ebc6dba", // random hash
       null,
-      BlockData(List[Transaction](), List[Transaction]())
+      BlockData(List[InputTransaction](), List[OutputTransaction]())
     )
 
     new Block(index, timestamp, previousHash, transaction :: Nil)

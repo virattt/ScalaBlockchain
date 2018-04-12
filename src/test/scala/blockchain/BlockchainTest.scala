@@ -1,7 +1,8 @@
 package blockchain
 
-import block.{Transaction, Block}
-import org.scalatest.{FlatSpec, FunSuite}
+import block.Block
+import org.scalatest.FlatSpec
+import transaction.Transaction
 
 class BlockchainTest extends FlatSpec {
 
@@ -25,30 +26,6 @@ class BlockchainTest extends FlatSpec {
     val lastBlock: Block = blockchain.getLastBlock
 
     assert(lastBlock.hash == z.hash)
-  }
-
-  "isValidChain" should "return true if the blockchain is valid" in {
-    val genesis: Block = Blockchain.getGenesisBlock
-    val z: Block = Block(1, 100, genesis.hash, List[Transaction]())
-    val y: Block = Block(2, 200, z.hash, List[Transaction]())
-    val x: Block = Block(3, 300, y.hash, List[Transaction]())
-
-    val blockchain: Blockchain = new Blockchain(List[Block](x, y, z, genesis), null)
-    val isValidChain: Boolean = blockchain.isValidChain(blockchain.getAllBlocks)
-
-    assert(isValidChain)
-  }
-
-  "isValidChain" should "return true if the blockchain is NOT valid" in {
-    val genesis: Block = Blockchain.getGenesisBlock
-    val z: Block = Block(1, 100, genesis.hash, List[Transaction]())
-    val y: Block = Block(2, 200, z.hash, List[Transaction]())
-    val x: Block = Block(3, 300, "Invalid hash", List[Transaction]())
-
-    val blockchain: Blockchain = new Blockchain(List[Block](x, y, z, genesis), null)
-    val isValidChain: Boolean = blockchain.isValidChain(blockchain.getAllBlocks)
-
-    assert(!isValidChain)
   }
 
   "replaceChain" should "replace existing chain when new chain is longer and valid" in {

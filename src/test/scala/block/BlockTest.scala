@@ -1,6 +1,7 @@
 package block
 
 import org.scalatest.FlatSpec
+import transaction.Transaction
 
 class BlockTest extends FlatSpec {
 

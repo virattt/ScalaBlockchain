@@ -1,7 +1,8 @@
 package miner
 
 import blockchain.Blockchain
-import block.{Transaction, Block}
+import block.Block
+import transaction.Transaction
 
 class Miner(blockchain: Blockchain) {
 

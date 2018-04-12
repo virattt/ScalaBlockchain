@@ -3,6 +3,9 @@ package block
 import java.math.BigInteger
 import java.security.MessageDigest
 
+import crypto.Crypto
+import transaction.Transaction
+
 /**
  * {  Sample Block JSON
  *  "index": 0, // (first block: 0)
@@ -29,7 +32,7 @@ case class Block(val index: Int, //
                  val transactions: List[Transaction]) {
 
   /**
-   * @return the hash value for this Block
+   * Return the hash value for this Block
    */
   def hash: String = Block.hash(this)
 
@@ -62,14 +65,6 @@ object Block {
    * @return a hashed value of some String input
    */
   def hash(input: String): String = {
-    sha256(input)
-  }
-
-  /**
-   * @return a SHA-256 hash of the input
-   */
-  def sha256(input: String): String = {
-    val message: Array[Byte] = MessageDigest.getInstance("SHA-256").digest(input.getBytes("UTF-8"))
-    String.format("%064x", new BigInteger(1, message))
+    Crypto.hash(input)
   }
 }
