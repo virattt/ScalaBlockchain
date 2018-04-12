@@ -1,7 +1,8 @@
 package blockchain
 
-import block.{Transaction, Block}
-import org.scalatest.{FlatSpec, FunSuite}
+import block.Block
+import org.scalatest.FlatSpec
+import transaction.Transaction
 
 class BlockchainTest extends FlatSpec {
 
