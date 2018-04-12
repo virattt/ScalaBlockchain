@@ -17,16 +17,12 @@ import block.{BlockData, Transaction, Block}
   *                       it from this list.
   */
 class Blockchain(var blockchain: List[Block], var transactions: List[Transaction]) {
-  // Proof-of-work difficulty settings
-  val BASE_DIFFICULTY = Integer.MAX_VALUE
-  val EVERY_X_BLOCKS = 5
-  val POW_CURVE = 5
 
   /**
     * Add blocks to the head of the blockchain
     */
   def addBlock(block: Block): List[Block] = {
-    if (isValidBlock(block, blockchain.head)) {
+    if (block.isValid(blockchain.head)) {
       block :: blockchain
     }
     blockchain
@@ -63,16 +59,6 @@ class Blockchain(var blockchain: List[Block], var transactions: List[Transaction
     */
   def getLastBlock: Block = {
     blockchain.last
-  }
-
-  /**
-   * Returns true if block is valid, else return false
-   */
-  def isValidBlock(block: Block, previousBlock: Block): Boolean = {
-    if (block.index != previousBlock.index + 1) return false
-    if (block.previousHash != previousBlock.hash) return false
-    if (Block.hash(block) != block.hash) return false
-    true
   }
 
   /**
@@ -114,7 +100,7 @@ class Blockchain(var blockchain: List[Block], var transactions: List[Transaction
   /**
    * Returns a Transaction that has the specified ID from the pending transactions
    */
-  def getTransactionById(transactionId: String): Transaction = {
+  def getPendingTransaction(transactionId: String): Transaction = {
     transactions.find(_.id == transactionId) match {
       case Some(transaction) => transaction
       case None => null
@@ -136,7 +122,6 @@ class Blockchain(var blockchain: List[Block], var transactions: List[Transaction
    * Returns the updated list of pending transactions
    */
   def addTransaction(transaction: Transaction): List[Transaction] = {
-    // TODO
     if (isValidTransaction(transaction)) {
       transactions ::: List(transaction)
     }
@@ -144,18 +129,13 @@ class Blockchain(var blockchain: List[Block], var transactions: List[Transaction
   }
 
   def isValidTransaction(transaction: Transaction): Boolean = {
+    // TODO
     false
   }
 
-  /**
-    * Returns the proof of work difficulty for a given index
-    */
-  def getDifficulty(index: Int): Double = {
-    Math.max( //
-      Math.floor( //
-        BASE_DIFFICULTY / Math.pow(Math.floor((index + 1) / EVERY_X_BLOCKS) + 1, //
-        POW_CURVE)), //
-      0)
+  def getUnspentTransactionsForAddress(address: String): Transaction = {
+    // TODO? This is the UTXO for an address.  But I may want to add it to wallet
+    null
   }
 }
 
@@ -163,6 +143,10 @@ class Blockchain(var blockchain: List[Block], var transactions: List[Transaction
   * A helper singleton for the Blockchain
   */
 object Blockchain {
+  // Proof-of-work difficulty settings
+  val BASE_DIFFICULTY = Integer.MAX_VALUE
+  val EVERY_X_BLOCKS = 5
+  val POW_CURVE = 5
 
   /**
     * @return the Genesis block, which contains fixed data
@@ -178,6 +162,17 @@ object Blockchain {
     )
 
     new Block(index, timestamp, previousHash, transaction :: Nil)
+  }
+
+  /**
+   * Returns the proof of work difficulty for a given index
+   */
+  def getDifficulty(index: Int): Double = {
+    Math.max( //
+      Math.floor( //
+        BASE_DIFFICULTY / Math.pow(Math.floor((index + 1) / EVERY_X_BLOCKS) + 1, //
+          POW_CURVE)), //
+      0)
   }
 }
 

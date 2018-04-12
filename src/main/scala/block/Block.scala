@@ -33,6 +33,14 @@ case class Block(val index: Int, //
    */
   def hash: String = Block.hash(this)
 
+  /**
+   * Returns true if block is valid, else return false
+   */
+  def isValid(previousBlock: Block): Boolean = {
+    if (index != previousBlock.index + 1) return false
+    if (previousHash != previousBlock.hash) return false
+    true
+  }
 }
 
 /**
